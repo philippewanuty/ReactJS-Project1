@@ -1,0 +1,11 @@
+{
+  "semi": true,
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.tsx"],
+      "options": {
+        "semi": false
+      }
+    }
+  ]
+}
