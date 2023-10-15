@@ -1,0 +1,13 @@
+.profileImg {
+
+    box-sizing: initial;
+
+    background-color: var(--gray-700);
+	outline: 2px solid var(--green-500);
+    border: 4px solid var(--gray-800);
+	border-radius: 8px;
+	
+    width: 3rem;
+	height: 3rem;
+
+}
