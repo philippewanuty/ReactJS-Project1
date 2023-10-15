@@ -1,5 +1,6 @@
 import styles from './Sidebar.module.css';
 import { PencilLine } from 'lucide-react';
+
 import CoverImg from '../assets/cover-image.png';
 import { Profile } from './Profile';
 
