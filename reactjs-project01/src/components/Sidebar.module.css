@@ -6,6 +6,7 @@
 	justify-content: center;
 	border-radius: 8px;
 	overflow: hidden;
+    max-height: 18.375rem;
 }
 
 .coverImg {
