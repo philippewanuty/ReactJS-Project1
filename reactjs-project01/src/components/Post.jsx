@@ -37,9 +37,11 @@ export function Post() {
 
 				<textarea className={styles.inputText} placeholder='Deixe o seu comentário' />
 
-				<button type='submit' className={styles.inputButton}>
-					Publicar
-				</button>
+				<footer>
+					<button type='submit' className={styles.inputButton}>
+						Publicar
+					</button>
+				</footer>
 			</form>
 		</article>
 	);

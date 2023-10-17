@@ -35,3 +35,18 @@
 </code>
 
 <p><b>Obs:</b> Aways needs a div inside the function</p>
+
+
+<p> Especial tips:</p>
+
+<p>remove all focus putting this code in global css</p>
+
+<code>
+
+  :focus {
+    outline: transparent;
+    box-shadow: 0 0 0 2px var(--green-500);
+  }
+  
+</code>
+

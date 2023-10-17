@@ -113,3 +113,13 @@
   
 
 }
+
+.feedback footer{
+    visibility: hidden;
+    max-height: 0;
+}
+
+.feedback:focus-within footer {
+    visibility: visible;
+    max-height: none;
+}
