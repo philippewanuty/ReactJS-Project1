@@ -86,7 +86,7 @@
     border-radius: 8px;
     height: 6rem;
     color: var(--white);
-    padding: 1rem;
+    padding:  1rem;
     resize: none;
 
 }
@@ -117,6 +117,7 @@
 .feedback footer{
     visibility: hidden;
     max-height: 0;
+   
 }
 
 .feedback:focus-within footer {

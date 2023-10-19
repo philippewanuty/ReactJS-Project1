@@ -1,5 +1,6 @@
 import styles from './Post.module.css';
 import { Profile } from './Profile';
+import { Comment } from './Comment';
 
 export function Post() {
 	return (
@@ -43,6 +44,11 @@ export function Post() {
 					</button>
 				</footer>
 			</form>
+
+	
+			<Comment />
+			<Comment />
+			<Comment />
 		</article>
 	);
 }
