@@ -1,13 +1,14 @@
 import styles from './Post.module.css';
-import { Profile } from './Profile';
+import { Profile } from './Avatar';
 import { Comment } from './Comment';
+
 
 export function Post() {
 	return (
 		<article className={styles.post}>
 			<header className={styles.postHeader}>
 				<div className={styles.author}>
-					<Profile />
+					<Profile src='https://github.com/diego3g.png' />
 					<div className={styles.authorInfo}>
 						<strong>Philippe Wanuty</strong>
 						<span>Front-End Developer</span>
@@ -45,10 +46,9 @@ export function Post() {
 				</footer>
 			</form>
 
-	
-			<Comment />
-			<Comment />
-			<Comment />
+			<div className={styles.commentList}>
+				<Comment />
+			</div>
 		</article>
 	);
 }

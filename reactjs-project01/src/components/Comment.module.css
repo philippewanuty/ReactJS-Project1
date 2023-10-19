@@ -1,21 +1,21 @@
 .commentBody {
 	display: flex;
 	gap: 1rem;
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .commentBody + .commentBody {
-    margin-top: 1.625rem;
+	margin-top: 1.625rem;
 }
 
-.commentBody img {
+/* .commentBody > img {
 	border-radius: 8px;
 	width: 3.125rem;
 	height: 3.125rem;
-}
+} */
 
 .commentMain {
-	width: 100%;
+	flex: 1;
 }
 
 .comment {
@@ -30,53 +30,82 @@
 .header {
 	display: flex;
 	justify-content: space-between;
+    align-items: flex-start;
+    
+	
 }
 
-.headerText {
+.authorAndTime {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 1rem;
 }
 
-.headerText strong {
+.authorAndTime > strong {
 	font-size: 0.875rem;
 	line-height: 1.6;
 	color: var(--gray-100);
 }
 
-.headerText time {
+.authorAndTime > time {
 	font-size: 0.75rem;
 	line-height: 1.6;
 	color: var(--gray-400);
 }
 
-.comment p {
+.comment > p {
 	color: var(--gray-200);
 }
 
-.Trash2 {
-	color: var(--gray-400);
-	height: 1.5rem;
-	width: 1.5rem;
+.trashButton {
+	background: transparent;
+	border:0;
+    line-height: 0  ;
+    color: var(--gray-400);
+	cursor: pointer;
 }
 
-.footer {
-	display: flex;
-	align-items: center;
-	gap: 0.625rem;
+
+.trashButton:hover{
+    color: var(--red-500);
+}
+
+footer {
 	margin-top: 1.125rem;
-  
 }
 
-.footer span {
-	font-size: 0.875;
-	font-weight: bold;
-	line-height: 1.6;
-	color: var(--gray-400);
+
+.commentBody footer > button {
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+    color: var(--gray-400);
+
+    display: flex;
+    align-items: center;
+  
+    font-weight: bold;
+    border-radius: 2px;
 }
+ 
+
+.commentBody footer > button:hover {
+    color: var(--green-400);
+}
+
+
+
 
 .ThumbsUp {
 	height: 1.25rem;
 	width: 1.25rem;
-	color: var(--gray-400);
-}
+    margin-right: 0.625rem;
+} 
+
+ .commentBody footer > button > span::before {
+    content: "\2022";
+    padding: 0 0.25rem;
+
+}  
+
+

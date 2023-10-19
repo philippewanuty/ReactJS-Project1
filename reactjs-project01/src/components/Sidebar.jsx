@@ -1,8 +1,8 @@
 import styles from './Sidebar.module.css';
 import { PencilLine } from 'lucide-react';
-
 import CoverImg from '../assets/cover-image.png';
-import { Profile } from './Profile';
+import { Profile } from './Avatar';
+import Avatar from '../assets/avatar.jpg';
 
 export function Sidebar() {
 	return (
@@ -10,7 +10,7 @@ export function Sidebar() {
 			<img className={styles.coverImg} src={CoverImg} alt='' />
 
 			<div className={styles.profile}>
-				<Profile />
+				<Profile  src={Avatar} />
 
 				<strong>Philippe Wanuty</strong>
 				<span>Web Developer</span>

@@ -38,7 +38,13 @@
 }
 
 
-.postHeader time,span {
+.postHeader > time {
+    color: var(--gray-400);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.postHeader div > div > span {
     color: var(--gray-400);
     font-size: 0.875rem;
     line-height: 1.6;
