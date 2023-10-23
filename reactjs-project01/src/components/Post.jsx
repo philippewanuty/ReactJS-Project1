@@ -1,28 +1,35 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+
 import styles from './Post.module.css';
-import { Profile } from './Avatar';
+
+import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 
+export function Post({ author, publishedAt, content }) {
+	const PublishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {locale: ptBR,});
 
-export function Post() {
+	const PublisedDAteRelativeNow = formatDistanceToNow(publishedAt, {
+		locale: ptBR
+	})
+
 	return (
 		<article className={styles.post}>
 			<header className={styles.postHeader}>
 				<div className={styles.author}>
-					<Profile src='https://github.com/diego3g.png' />
+					<Avatar src={author.avatarUrl} />
 					<div className={styles.authorInfo}>
-						<strong>Philippe Wanuty</strong>
-						<span>Front-End Developer</span>
+						<strong>{author.name}</strong>
+						<span>{author.role}</span>
 					</div>
 				</div>
-				<time title='06 de Fevereiro às 17h' dateTime='2023-02-06 17:00:07'>
-					Públicado há 1h
-				</time>
+				<time title={PublishedDateFormatted} dateTime="2022-05-11 08:13:30"> {PublisedDAteRelativeNow}</time>
 			</header>
 
 			<div className={styles.textArea}>
 				<p>Fala galera 👋</p>
 
-				<p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
+				<p>Acabei de subir mais um jeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
 
 				<p>
 					<a href=''>jane.design/doctorcare</a>
@@ -47,6 +54,8 @@ export function Post() {
 			</form>
 
 			<div className={styles.commentList}>
+				<Comment />
+				<Comment />
 				<Comment />
 			</div>
 		</article>

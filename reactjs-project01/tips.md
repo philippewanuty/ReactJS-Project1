@@ -3,9 +3,17 @@
 <h2>Create project</h2>
 
 <p>
-    npm create vite@latest => chose React and JS <br>
-    npm run dev <br>
-    npm i => for install dependences
+    npm create vite@latest => for create project chose React and JS <br>
+    npm run dev  => for run aplication <br>
+    npm i => for install dependences <br>
+  
+</p>
+
+<h2>Libraries</h2>
+
+<p>
+   
+    npm i date-fns => for use date
 </p>
 
 <h2>Creating components</h2>
@@ -43,10 +51,10 @@
 
 <code>
 
-  :focus {
+    :focus {
     outline: transparent;
-    box-shadow: 0 0 0 2px var(--green-500);
-  }
+
+    box-shadow: 0 0 0 2px var(--green-500);}
   
 </code>
 

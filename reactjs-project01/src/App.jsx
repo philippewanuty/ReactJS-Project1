@@ -6,6 +6,40 @@ import './global.css';
 import styles from './App.module.css';
 import { Sidebar } from './components/Sidebar';
 
+// Simulação de API
+const posts = [
+	{
+		id: 1,
+		author: {
+			avatarUrl: 'https://github.com/philippewanuty.png',
+			name: 'Philippe Wanuty',
+			role: 'Senior Developer @ Amazon',
+		},
+		content: [
+			{ type: 'paragraph', content: 'Fala galera 👋' },
+			{ type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+			{ type: 'Link', content: 'https://philippewanuty.com' },
+		],
+		publishedAt: new Date('2023-10-22 09:00'),
+	},
+	{
+		id: 2,
+		author: {
+			avatarUrl: 'https://github.com/diego3g.png',
+			name: 'Diego Fernandes',
+			role: 'CTO @ Rocketseat',
+		},
+		content: [
+			{ type: 'paragraph', content: 'Fala galera 👋' },
+			{ type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+			{ type: 'Link', content: 'https://githup.com/diego3g' },
+		],
+		publishedAt: new Date('2023-10-12 19:00'),
+	},
+];
+
+//FIM -  Simulação de API
+
 export function App() {
 	return (
 		<div>
@@ -15,11 +49,16 @@ export function App() {
 				<Sidebar />
 
 				<main>
-					<Post />
-
-					<Post author='Phiilippe Wanuty' content='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat provident' />
-					
-					<Post author='Jefferson Antony' content='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat provident' />
+					{posts.map(post => {
+						return (
+							<Post
+							author={post.author}
+							content={post.content}
+							publishedAt={post.publishedAt}
+							
+							/>
+						)
+					})}
 				</main>
 			</div>
 		</div>
