@@ -3,14 +3,13 @@ import { PencilLine } from 'lucide-react';
 import CoverImg from '../assets/cover-image.png';
 import { Avatar } from './Avatar';
 
-
 export function Sidebar() {
 	return (
 		<aside className={styles.sidebar}>
 			<img className={styles.coverImg} src={CoverImg} alt='' />
 
 			<div className={styles.profile}>
-				<Avatar  src='https://github.com/philippewanuty.png' />
+				<Avatar src='https://github.com/philippewanuty.png' />
 
 				<strong>Philippe Wanuty</strong>
 				<span>Web Developer</span>

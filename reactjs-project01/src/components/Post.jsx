@@ -5,13 +5,30 @@ import styles from './Post.module.css';
 
 import { Avatar } from './Avatar';
 import { Comment } from './Comment';
+import { useState } from 'react';
 
 export function Post({ author, publishedAt, content }) {
-	const PublishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {locale: ptBR,});
+	const [newCommentText, setNewCommentText] = useState('');
 
-	const PublisedDAteRelativeNow = formatDistanceToNow(publishedAt, {
-		locale: ptBR
-	})
+	const [comments, setComments] = useState(['Ta dificil mas eu vou conseguir']);
+
+	function HandleCreateNewComment() {
+		event.preventDefault();
+
+		setComments([...comments, newCommentText]);
+		setNewCommentText('');
+	}
+
+	function handleNewCommentChange() {
+		setNewCommentText(event.target.value);
+	}
+
+	const PublishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", { locale: ptBR });
+
+	const PublisedDateRelativeNow = formatDistanceToNow(publishedAt, {
+		locale: ptBR,
+		addSuffix: true,
+	});
 
 	return (
 		<article className={styles.post}>
@@ -23,28 +40,29 @@ export function Post({ author, publishedAt, content }) {
 						<span>{author.role}</span>
 					</div>
 				</div>
-				<time title={PublishedDateFormatted} dateTime="2022-05-11 08:13:30"> {PublisedDAteRelativeNow}</time>
+				<time title={PublishedDateFormatted} dateTime={publishedAt.toISOString()}>
+					{PublisedDateRelativeNow}
+				</time>
 			</header>
 
 			<div className={styles.textArea}>
-				<p>Fala galera 👋</p>
-
-				<p>Acabei de subir mais um jeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-
-				<p>
-					<a href=''>jane.design/doctorcare</a>
-				</p>
-				<p>
-					<a href=''>#novoprojeto </a>
-					<a href=''>#nlw </a>
-					<a href=''>#rocketseat </a>
-				</p>
+				{content.map((Line) => {
+					if (Line.type === 'paragraph') {
+						return <p key={Line.content}>{Line.content}</p>;
+					} else if (Line.type === 'link') {
+						return (
+							<p key={Line.content}>
+								<a href='#'>{Line.content}</a>
+							</p>
+						);
+					}
+				})}
 			</div>
 
-			<form className={styles.feedback}>
+			<form onSubmit={HandleCreateNewComment} className={styles.feedback}>
 				<strong>Deixe o seu feedback</strong>
 
-				<textarea className={styles.inputText} placeholder='Deixe o seu comentário' />
+				<textarea className={styles.inputText} name='comment' placeholder='Deixe o seu comentário' value={newCommentText} onChange={handleNewCommentChange} />
 
 				<footer>
 					<button type='submit' className={styles.inputButton}>
@@ -54,9 +72,9 @@ export function Post({ author, publishedAt, content }) {
 			</form>
 
 			<div className={styles.commentList}>
-				<Comment />
-				<Comment />
-				<Comment />
+				{comments.map((comment) => {
+					return <Comment key={comment} content={comment} />;
+				})}
 			</div>
 		</article>
 	);

@@ -3,7 +3,7 @@ import styles from './Comment.module.css';
 import { Trash2, ThumbsUp } from 'lucide-react';
 import { Avatar } from './Avatar';
 
-export function Comment() {
+export function Comment({content}) {
 	return (
 		<div className={styles.commentBody}>
 			<Avatar hasBorder={false} src='https://github.com/maykbrito.png' />
@@ -20,7 +20,7 @@ export function Comment() {
 							<Trash2 className={styles.Trash2} />
 						</button>
 					</header>
-					<p>Muito bom, parabéns!!</p>
+					<p>{content}</p>
 				</div>
 				<footer>
 					<button className={styles.buttonFooter}>

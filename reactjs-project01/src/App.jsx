@@ -17,10 +17,10 @@ const posts = [
 		},
 		content: [
 			{ type: 'paragraph', content: 'Fala galera 👋' },
-			{ type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
-			{ type: 'Link', content: 'https://philippewanuty.com' },
+			{ type: 'paragraph', content: 'Estou muito feliz em compartilhar que fui contratado pela Amazon como Dev Senior.' },
+			{ type: 'link', content: 'https://philippewanuty.com' },
 		],
-		publishedAt: new Date('2023-10-22 09:00'),
+		publishedAt: new Date('2023-10-25 09:00'),
 	},
 	{
 		id: 2,
@@ -36,6 +36,7 @@ const posts = [
 		],
 		publishedAt: new Date('2023-10-12 19:00'),
 	},
+	
 ];
 
 //FIM -  Simulação de API
@@ -52,6 +53,7 @@ export function App() {
 					{posts.map(post => {
 						return (
 							<Post
+							key={post.id}
 							author={post.author}
 							content={post.content}
 							publishedAt={post.publishedAt}
